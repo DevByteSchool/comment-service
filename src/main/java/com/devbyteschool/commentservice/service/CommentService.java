@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.awt.print.Pageable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -19,6 +20,8 @@ public class CommentService {
     public Comment createComment(CreateCommentRequest createCommentRequest) throws Exception {
         Comment comment = new Comment();
         BeanUtils.copyProperties(createCommentRequest, comment);
+        comment.setCreatedAt(LocalDateTime.now());
+        comment.setUpdatedAt(LocalDateTime.now());
         return commentRespository.save(comment);
     }
 

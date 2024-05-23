@@ -1,13 +1,13 @@
 # App config
 server:
   port: 8090
-
+   
 spring:
   application:
     name: comment-service
   data:
     mongodb:
-      uri: database-url
+      uri: mongodb+srv://root:root@blog-project.afmphqb.mongodb.net/?retryWrites=true&w=majority
       database: blog-project
 
 eureka:
